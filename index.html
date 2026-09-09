@@ -141,6 +141,7 @@ body {
   font-size: 40px;
 
   background: radial-gradient(circle, #4deaff, #007bb5, #02304e);
+
   box-shadow:
     0 0 25px #00d9ff,
     0 0 60px rgba(0, 180, 255, .6);
@@ -168,30 +169,35 @@ h1 {
   font-size: 16px;
 }
 
-/* BUTTON */
-.get-started {
-  margin-top: 20px;
-  padding: 16px 38px;
+/* INSTAGRAM LINK */
+.instagram {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
 
-  border: none;
-  border-radius: 30px;
+  border-radius: 25px;
 
-  background: white;
-  color: #05658f;
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
 
-  font-size: 16px;
+  color: white;
+  text-decoration: none;
   font-weight: bold;
 
-  cursor: pointer;
-
-  box-shadow: 0 0 25px rgba(0, 220, 255, .5);
+  box-shadow: 0 0 20px rgba(214, 41, 118, .5);
 
   transition: .25s;
 }
 
-.get-started:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 0 40px #00d9ff;
+.instagram:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(214, 41, 118, .8);
 }
 
 /* SIGN UP SCREEN */
@@ -288,6 +294,7 @@ footer {
   from {
     transform: translate(-50%, -50%) rotate(0);
   }
+
   to {
     transform: translate(-50%, -50%) rotate(360deg);
   }
@@ -338,11 +345,12 @@ footer {
 
 
 <!-- WELCOME PAGE -->
+
 <section class="welcome-screen" id="welcome">
 
   <div class="content">
 
-    <div class="logo">🌍</div> 
+    <div class="logo">🌍</div>
 
     <h1>Your World</h1>
 
@@ -351,12 +359,36 @@ footer {
     </div>
 
     <p class="description">
-   THE FUTURE PROJECT HASN'T DONE YET, FOR INQUIRES KINDLY SEND ME A CHAT THRU THE LINK THE I WILL PROVIDE
+      THE FUTURE PROJECT HASN'T DONE YET,
+      FOR INQUIRIES KINDLY SEND ME A CHAT
+      THRU THE LINK THAT I WILL PROVIDE.
     </p>
 
-    <div class="https://www.instagram.com/zues_solitude/ ">Instagram</div>
+
+    <!-- INSTAGRAM -->
+
+    <a
+      href="https://www.instagram.com/zues_solitude/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="instagram">
+
+      📷 Instagram
+
+    </a>
 
 
+    <!-- SIGN UP -->
+
+    <br>
+
+    <button
+      class="get-started"
+      onclick="showSignup()">
+
+      Sign Up →
+
+    </button>
 
   </div>
 
@@ -364,6 +396,7 @@ footer {
 
 
 <!-- SIGN UP PAGE -->
+
 <section class="signup-screen" id="signup">
 
   <div class="card">
@@ -375,50 +408,104 @@ footer {
     <form onsubmit="createAccount(event)">
 
       <div class="input">
+
         <label>Full name</label>
+
         <input
           type="text"
           placeholder="Enter your name"
           required>
+
       </div>
 
+
       <div class="input">
+
         <label>Email</label>
+
         <input
           type="email"
           placeholder="Enter your email"
           required>
+
       </div>
 
+
       <div class="input">
+
         <label>Password</label>
+
         <input
           type="password"
           placeholder="Create a password"
           required>
+
       </div>
 
-      <button class="create" type="submit">
+
+      <button
+        class="create"
+        type="submit">
+
         Create account
+
       </button>
 
     </form>
 
-    <a href="#" class="back" onclick="showWelcome(event)">
+
+    <a
+      href="#"
+      class="back"
+      onclick="showWelcome(event)">
+
       ← Back to welcome
+
     </a>
 
   </div>
 
-<footer>
-@Future project will be published
-</footer>
 </section>
-</div>
 
+
+<footer>
+  @Future project will be published
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function showSignup() {
+
+  document.getElementById("welcome").style.display = "none";
+
+  document.getElementById("signup").style.display = "flex";
+
+}
+
+
+function showWelcome(event) {
+
+  event.preventDefault();
+
+  document.getElementById("signup").style.display = "none";
+
+  document.getElementById("welcome").style.display = "flex";
+
+}
+
+
+function createAccount(event) {
+
+  event.preventDefault();
+
+  alert("Account created successfully! 🌍");
+
+}
 
 </script>
 
 </body>
 </html>
-```
